@@ -1,0 +1,79 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{icomma}
+\usepackage{upgreek}
+\mathtoolsset{showonlyrefs=true}
+
+\usepackage{tabto}
+\usepackage{euscript}
+\usepackage{mathrsfs}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+\author{Kupriyanov Kirill}
+\title{Data Analysis PI\\Theoretical assignment $\#2$}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section*{Task 1.}
+\underline{\textit{Problem:}} Prove that the complexity (number of elementary mathematical operations such as +, -, *, / for scalars
+and boolean condition checks) for binary decision tree training from training set with $N$ objects having
+$D$ features each does not exceed $O(N^2\cdot D\cdot 2\log(N))$. At this task suppose that the decision tree is balanced
+and each terminal node contains only one object.\\
+\newline
+\underline{\textit{Solution:}} The construction time of a balanced
+decision tree is \(O(N\cdot D\cdot \log(N))\). The algorithm attempts to build
+the balanced tree, but often does not succeed, nevertheless, assuming that
+subtrees are approximately balanced, the cost at each node consists of
+searching through all (\(O(D)\)) features to find one that offers the largest
+reduction in the entropy. That thing has computational complexity of
+\(O(N\cdot D \cdot \log(N))\). If operations at each node are summed up, the
+result is \(O(N^2\cdot D\cdot \log(N))\). \\
+\newline
+\textit{And I think that there is a mistake in the problem statement: it was meant to be written \(O(N^2\cdot D\cdot \log(N))\)} but instead it says $D^2$..
+
+\newpage
+\section*{Task 2.}
+\underline{\textit{Problem:}} Assume we use a particular feature \(i\) for
+splitting a certain internal node containing \(N\) objects. We
+want to determine the optimal threshold value \(h
+\) such that the sum of entropies for the children nodes
+\(\{x|x\cdot i < h\} \text{ and } \{x|x\cdot i > h\}\) is the smallest. Propose the algorithm that founds the optimal threshold
+with complexity \(O(N\cdot \log(N))\).\\
+\newline
+\underline{\textit{Solution:}} Implementation from the previous task does
+overhead. It recomputes class labels at each new split. What could be done is
+presorting features over all relevant samples while keeping the label count. It
+will reduce the complexity at each node to \(O(N\cdot \log(N))\). Finding
+optimal sum of entropies for 2 new child nodes takes \(O(N)\). Entropy for one
+node can be calculated within \(O(1)\).\\
+So the total cost for all features is \(O(N\cdot D\cdot \log(N))\). And it finds optimal threshold within \(O(N\cdot \log(N))\).
+
+\section*{Task 3.}
+\underline{\textit{Problem:}} Consider multiclass
+classification task with \(K\) classes. Objects in this task have \(L\) binary
+features.  How many different decision trees of depth \(L\) can be constructed
+for this task? Two decision trees are different if there is an object in \(\{0,
+1\}\) \(L\) which they classify differently.\\
+\newline
+\underline{\textit{Solution:}} If only binary features are considered and a
+binary classification task, then for a training dataset having $L$ features
+there are at most \(2^L\) possible instances. Taking into account that there
+are $K$ classes in the dataset, there are \(2^{K^L}\) different ways of labeling
+all instances, and each labeling corresponds to a different underlying boolean
+function that can be represented as a decision tree.
+
+\end{document}
+
+% EOF
