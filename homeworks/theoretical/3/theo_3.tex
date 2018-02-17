@@ -55,15 +55,15 @@ Taking derivative, a value of $b$ could be evaluated. With this $b$, integral re
     4b + \frac{4}{3} = 0\\
     b = -\frac{1}{3}
 \end{gather}\\
-So we get  ($x^2 - \frac{1}{2}$). Second picture is more likely to be chosen
+So we get  ($x^2 - \frac{1}{3}$). Second picture is more likely to be chosen
 than the trird one.\\
 \newline
-So the answer that \textit{third} picture could not be obtained.
+So the answer is that \textit{third} picture could not be obtained.
 
 
 \newpage
 \section*{Task 2.}
-Consider linear regression task in one-dimensional space \(y = kx+b\) and two
+\underline{\textit{Problem:}} Consider linear regression task in one-dimensional space \(y = kx+b\) and two
 datasets: \((x_1^1 , y_1^1 ), \dots, (x^1_n , y_n^1 )\) and
 \((x_1^2 , y_1^2), \dots, (x^2_m , y_m^2 )\).
 Assume that the least squares method is used to train a regression models in this task.
@@ -74,7 +74,7 @@ both datasets together then the obtained coefficient \(k\) will also
 be positive?
 Additionally answer that question if we know that \(\sum_{i=1}^nx_i^1 = 0 \text{ and  } \sum_{i=1}^mx_i^2 = 0\).\\
 \newline
-\underline{\textit{Solution:}} First case. Suppose, the green dots are
+\underline{\textit{Solution, first question:}} Suppose, the green dots are
 representing the first dataset. Then, the green line is the solution, which
 will be given by a regression. For the second dataset there are red dots and
 red line respectively.\\
@@ -82,36 +82,33 @@ red line respectively.\\
 Obviously, \(k_1 > 0\) and \(k_2 > 0\). The purpule line is the result of fitting using both datasets. As it could be seen, \(k_{purple} < 0\).\\
 \newline
 So, the answer to the first question is \textit{no}.
-\begin{center}
-\includegraphics[width=\textwidth]{fit-dataset}
-\end{center}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.85\textwidth]{fit-dataset}
+    \caption{2 fitted datasets}
+\end{figure}
+
+\underline{\textit{Solution, second question:}} There are several possible
+outcomes. \\
 
 
+1. Suppose that for every dataset, $\forall x^c_i$ $\exists$ $-x^c_i$.  Like,
+for each $5$ there is only one $-5$, and for each $-1$ there is only one $1$.
+So this satisfies the condition in the problem statement. Note, that this
+satisfies condition only for $x^c$ coordinate, not for $y^c$. That's why $k$ in
+every dataset can be both $1$ and $-1$. When fitted of both datasets, the
+\textit{purple} line would be just a straight vertical line.\\
 
+2. $\forall ax^c_i$ $\overset{t}{\exists}$ $-\frac{ma}{n}x^c_i$. For example:
+for every point $2$ there is 2 poins of $-1$. Or for every point $-10$, there
+is $2$ points of $5$ or $10$ points of $1$. In this case $k$ also could be
+anything. So does $k_{purple}$.\\
 
+So, the answer to the second question, \textit{not always}.
 
-Implementation from the previous task does
-overhead. It recomputes class labels at each new split. What could be done is
-presorting features over all relevant samples while keeping the label count. It
-will reduce the complexity at each node to \(O(N\cdot \log(N))\). Finding
-optimal sum of entropies for 2 new child nodes takes \(O(N)\). Entropy for one
-node can be calculated within \(O(1)\).\\
-So the total cost for all features is \(O(N\cdot D\cdot \log(N))\). And it finds optimal threshold within \(O(N\cdot \log(N))\).
-
-\section*{Task 3.}
-\underline{\textit{Problem:}} Consider multiclass
-classification task with \(K\) classes. Objects in this task have \(L\) binary
-features.  How many different decision trees of depth \(L\) can be constructed
-for this task? Two decision trees are different if there is an object in \(\{0,
-1\}\) \(L\) which they classify differently.\\
-\newline
-\underline{\textit{Solution:}} If only binary features are considered and a
-binary classification task, then for a training dataset having $L$ features
-there are at most \(2^L\) possible instances. Taking into account that there
-are $K$ classes in the dataset, there are \(2^{K^L}\) different ways of labeling
-all instances, and each labeling corresponds to a different underlying boolean
-function that can be represented as a decision tree.
 
 \end{document}
+
 
 % EOF
