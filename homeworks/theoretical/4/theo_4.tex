@@ -5,6 +5,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
+\usepackage{listings}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
 \usepackage{icomma}
@@ -21,7 +22,7 @@
 {\hbox{$\mathsurround=0pt #1$}}{}}
 
 \author{Kupriyanov Kirill}
-\title{Data Analysis PI\\Theoretical assignment $\#3$}
+\title{Data Analysis PI\\Theoretical assignment $\#4$}
 \date{}
 
 \begin{document}
@@ -29,83 +30,64 @@
 \thispagestyle{empty}
 \newpage
 \section*{Task 1.}
-\underline{\textit{Problem:}} Consider linear regression task in
-one-dimensional space. \({(x_i , y_i)}^N_{i=1}\) is a training dataset and
-for object \(i: x_i \in [-1, 1]\) is a feature, $y_i$ is an answer we want to
-predict, $y_i^*=kx_i+b$ is our prediction. At the picture below you can see
-three different plots of the prediction error \((y - y^*)\) against $x$. Which of
-these plots cannot be obtained if least squares method is used to train a
-regression model?\\
-\includegraphics[width=\textwidth]{1}
+\underline{\textit{Problem:}} The more parameters are included in machine
+learning algorithm, the more it is biased to overfitting.  Indeed, overfitting
+means ``flexibility'' of the model towards each observation, that in turn means
+high ``degree of freedom''(large number of parameters).\\
 \newline
-\underline{\textit{Solution:}} The first picture represents how data is spread pretty linearly. Obviously, this situation is valid.\\
-Pictures 2 and 3 are representing non-linear, but but kind of uniformly
-distributed dependencies of features. Also these distributions could roughly be described with the following equation: \(y - \hat{y} = x^2+b\)
-\begin{gather}
-    y - \hat{y} = x^2 + b\\
-    (y - \hat{y})^2 = (x^2 + b^2)^2\\
-    \sum^{N}_{i = 1}{(y_i - \hat{y_i})^2} \overset{\text{OLS} }{\rightarrow} \text{min}\\
-    \int_{-1}^{1} (y - \hat{y})^2  \rightarrow \text{min}\\
-    \text{Now we have } \int_{-1}^{1}(x^2+b)^2\\
-    F((x^2+b)^2) = \frac{x^5}{5} + 2b\frac{x^3}{3} + xb^2\\
-    \int_{-1}^{1}(x^2 + b)^2 = \frac{1}{5}+\frac{2b}{3} + b^2 + \frac{1}{5} + \frac{2}{3}b + b^2 = \frac{2}{5} + \frac{4}{3}b + 2b^2
-\end{gather}
-Taking derivative, a value of $b$ could be evaluated. With this $b$, integral reaches its minimum ponts.
-\begin{gather}
-    4b + \frac{4}{3} = 0\\
-    b = -\frac{1}{3}
-\end{gather}\\
-So we get  ($x^2 - \frac{1}{3}$). Second picture is more likely to be chosen
-than the trird one.\\
+Consider classification results of two methods: Linear
+classifier (Figure 1) and K-Nearest Neighbour classifier (Figure 2). In
+\(m\)-dimensional space linear classifiers have about \(m\) weight parameters,
+while kNN has a single one – the number of nearest neighbours.\\
 \newline
-So the answer is that \textit{third} picture could not be obtained.
+Not only from that particular case it is clear, that despite having only one
+parameter, the decision boundary of kNN is more complex and flexible, as
+opposite to linear classifier solution. But that contradicts the valid argument
+about flexibility and the number of parameters! Why is this happening with kNN?
+Justify your answer.
 
+\includegraphics[width=\textwidth]{classifiers}
+\newline
+\underline{\textit{Solution:}} A classifier is linear if its decision boundary
+on the feature space is a linear function: positive and negative examples are
+separated by a \textbf{hyperplane}. By it's defenition, it cannot be
+``flexible'' and non-linear. On the opposite, nonlinearity of kNN is
+intuitively clear when looking at examples like Figure 2. The decision
+boundaries of kNN are locally linear segments, but in general have a complex
+shape that is not equivalent to a line in 2D or a hyperplane in higher
+dimensions.\\
+\newline
+This is because KNN is non-parametric, i.e.\ it makes no assumption about the
+data distribution. It just finds \(k\) closest neighbours for each sample in
+the space. On the contrast, linear classifier has \(m\) parameters in the \(m\)-featured space, because the desicion hyperplane has weights \(\beta_i\); \(i\in[1,m]\).
 
 \newpage
 \section*{Task 2.}
-\underline{\textit{Problem:}} Consider linear regression task in one-dimensional space \(y = kx+b\) and two
-datasets: \((x_1^1 , y_1^1 ), \dots, (x^1_n , y_n^1 )\) and
-\((x_1^2 , y_1^2), \dots, (x^2_m , y_m^2 )\).
-Assume that the least squares method is used to train a regression models in this task.
-It turns out, that if we train a regression model on the first dataset we obtain a coefficient \(k_1 > 0\).
-Similarly, if we train a regression model on the second dataset we obtain a
-coefficient \(k_2 > 0\). Is it true that if we train the regression model on
-both datasets together then the obtained coefficient \(k\) will also
-be positive?
-Additionally answer that question if we know that \(\sum_{i=1}^nx_i^1 = 0 \text{ and  } \sum_{i=1}^mx_i^2 = 0\).\\
+\underline{\textit{Problem:}} A student has implemented perception algorithm for linearly separable dataset (learning rate is equal
+to 1). Find a mistake in he following code listing:
+\begin{lstlisting}[mathescape]
+Initialize weights: $w = (w_1, \dots, w_d) = 0$
+Until no errors on train set:
+    i = GetRandomIndex()
+    if $y_i\langle x_i, w\rangle < 0:$
+        $w = w + y_ix_i$
+\end{lstlisting}
+\underline{\textit{Solution:}} The mistake is that all weights are initialized
+with the same number, in this case, zeroes. The thing is, that during forward
+propagation, every neuron gets sum of inputs, multiplied by weights. And if
+weights are initialized as the same numbers (e.g., zeroes or ones), each hidden
+neuron will get the same signal. This can cause symmetry in the whole
+perception when backpropagating. So in this case, all units in the same layer
+will be the same.
+
+\newpage
+\section*{Task 3.}
+\underline{\textit{Problem:}} Consider a linearly separable dataset. Write down ML loss function for logistic regression. Show that
+the maximum likelihood solution for the logistic regression model is obtained by finding a vector \(w\) and
+\(w_0\) with all coefficients tend to infinity.
+Name a technique that can help to overcome this issue.\\
 \newline
-\underline{\textit{Solution, first question:}} Suppose, the green dots are
-representing the first dataset. Then, the green line is the solution, which
-will be given by a regression. For the second dataset there are red dots and
-red line respectively.\\
-\newline
-Obviously, \(k_1 > 0\) and \(k_2 > 0\). The purpule line is the result of fitting using both datasets. As it could be seen, \(k_{purple} < 0\).\\
-\newline
-So, the answer to the first question is \textit{no}.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=.85\textwidth]{fit-dataset}
-    \caption{2 fitted datasets}
-\end{figure}
-
-\underline{\textit{Solution, second question:}} There are several possible
-outcomes. \\
-
-
-1. Suppose that for every dataset, $\forall x^c_i$ $\exists$ $-x^c_i$.  Like,
-for each $5$ there is only one $-5$, and for each $-1$ there is only one $1$.
-So this satisfies the condition in the problem statement. Note, that this
-satisfies condition only for $x^c$ coordinate, not for $y^c$. That's why $k$ in
-every dataset can be both $1$ and $-1$. When fitted of both datasets, the
-\textit{purple} line would be just a straight vertical line.\\
-
-2. $\forall ax^c_i$ $\overset{t}{\exists}$ $-\frac{ma}{n}x^c_i$. For example:
-for every point $2$ there is 2 poins of $-1$. Or for every point $-10$, there
-is $2$ points of $5$ or $10$ points of $1$. In this case $k$ also could be
-anything. So does $k_{purple}$.\\
-
-So, the answer to the second question, \textit{not always}.
+\underline{\textit{Solution:}}
 
 
 \end{document}
