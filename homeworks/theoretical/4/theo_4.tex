@@ -87,10 +87,31 @@ the maximum likelihood solution for the logistic regression model is obtained by
 \(w_0\) with all coefficients tend to infinity.
 Name a technique that can help to overcome this issue.\\
 \newline
-\underline{\textit{Solution:}}
+\underline{\textit{Solution:}} The binomial likelihood function looks like
+follows:
+
+\[
+    L = \sum_it_i\log(p_i) + (1-t_i)\log(1-p_i)
+\]
+In each term in the summation only one of \(t_i\log(p_i)\) or
+\((1-t_i)\log(1-p_i)\) is non-zero, with a contribution of \(p_i\) for \(t_i =
+1\) and \(1-p_i\) for \(t_i = 0\).\\
+\newline
+To be more accurate, the following could be written:
+\[
+    S(\beta,x) = \frac{1}{1+\exp(-\beta x)}
+\]
+
+for the sigmoid function. There are also two limits, each approaching limit monotonically:
+\begin{align}
+    \lim_{\beta\rightarrow\infty} S(\beta,x) &= 0 \text{ for  }x < 0\\
+    \lim_{\beta\rightarrow\infty} S(\beta,x) &= 1 \text{ for  }x > 0
+\end{align}
+The first limit is decreasing, the second is increasing. Each of these follows easily from the formula for \(S\).
 
 
 \end{document}
 
 
 % EOF
+
