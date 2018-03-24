@@ -16,6 +16,7 @@
 \usepackage{euscript}
 \usepackage{mathrsfs}
 
+\usepackage[top=3cm, bottom=1.5cm]{geometry}
 \usepackage{graphicx}
 
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
@@ -81,33 +82,48 @@ So, the linear classifier is \(O(d)\), and SVM is \(O(md)\)
 
 \newpage
 \section*{Task 3.}
-\underline{\textit{Problem:}} Consider a linearly separable dataset. Write down ML loss function for logistic regression. Show that
-the maximum likelihood solution for the logistic regression model is obtained by finding a vector \(w\) and
-\(w_0\) with all coefficients tend to infinity.
-Name a technique that can help to overcome this issue.\\
+\underline{\textit{Problem:}} Consider SVM regression optimization problem. Write down dual formulation of that problem with
+Lagrangian and Karush-Kuhn-Takker theorem.\\
 \newline
-\underline{\textit{Solution:}} The binomial likelihood function looks like
-follows:
+\underline{\textit{Solution:}} \(\varepsilon\) - insensitive error function
 
 \[
-    L = \sum_it_i\log(p_i) + (1-t_i)\log(1-p_i)
+    E_\varepsilon(a(x) - y)=
+    \begin{cases}
+        0 &\mbox{if } |a(x) - y| < \varepsilon \\
+        |a(x) - y| - \varepsilon &\mbox{else} 
+    \end{cases}
 \]
-In each term in the summation only one of \(t_i\log(p_i)\) or
-\((1-t_i)\log(1-p_i)\) is non-zero, with a contribution of \(p_i\) for \(t_i =
-1\) and \(1-p_i\) for \(t_i = 0\).\\
-\newline
-To be more accurate, the following could be written:
+The goal is to minimize a regularized error function given by
 \[
-    S(\beta,x) = \frac{1}{1+\exp(-\beta x)}
+    C\sum^l_{i=1}E_\varepsilon(a(x_i)-y_i)+\frac{1}{2C}||w||^2
+\]
+Let the slacks variables be:
+\begin{gather}
+    \xi^+_i = (\langle w,x_i \rangle - w_0 - y_i - \varepsilon)_+ \geqslant 0\\
+    \xi^-_i = (-\langle w,x_i \rangle - w_0 + y_i - \varepsilon)_+ \geqslant 0
+\end{gather}
+
+SVR error function:
+\[
+    \frac{1}{2}||w||^2 + C\sum_{i=1}^l(\xi_i^++\xi_i^-) \rightarrow min_{w,w_0,\xi^+,\xi^-}
+\]
+The Lagrange multipliers are \(a_n\geqslant 0,\hat{a}_n \geqslant 0, \mu_n\geqslant0\) and \(\hat{\mu}\geqslant 0\)
+\[
+    L = C\sum_{i=1}^l(\xi_i^++\xi_i^-) + \frac12||w||^2 - \sum_{i=1}^l(\mu_i\xi_i^++\hat{\mu}\xi_i^-) - \sum_{i=1}^la_i(\varepsilon+\xi_i^++a_i-y_i) - \sum_{i=1}^l\hat{a_i}(\varepsilon+\xi_i^--a_i+y_i)
 \]
 
-for the sigmoid function. There are also two limits, each approaching limit monotonically:
-\begin{align}
-    \lim_{\beta\rightarrow\infty} S(\beta,x) &= 0 \text{ for  }x < 0\\
-    \lim_{\beta\rightarrow\infty} S(\beta,x) &= 1 \text{ for  }x > 0
-\end{align}
-The first limit is decreasing, the second is increasing. Each of these follows easily from the formula for \(S\).
+\begin{gather}
+    \frac{dL}{dw}=0 \rightarrow w = \sum_{i=1}^l(a_i-\hat{a}_i)x_i\\
+    \frac{dL}{db}=0 \rightarrow \sum_{i=1}^l(a_i-\hat{a}_i) = 0\\
+    \frac{dL}{d\xi_i^+}=0 \rightarrow a_i+\mu_i = C\\
+    \frac{dL}{d\xi_i^-}=0 \rightarrow \hat{a}_i+\hat{\mu}_i = C\\
+\end{gather}
 
+So the dual problem:
+\[
+    L(a,\hat{a}) = -\frac12\sum_{i=1}^l\sum_{j=1}^l(a_i-\hat{a}_i)(a_j-\hat{a}_j)\varphi(x_i,x_j)-\varepsilon \sum_{i=1}^l(a_i+\hat{a}_i)+\sum_{i=1}^l(a_i-\hat{a}_i)y_i
+\]
 
 \end{document}
 

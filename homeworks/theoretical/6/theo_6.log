@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.8)  23 MAR 2018 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.8)  25 MAR 2018 00:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -749,6 +749,32 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup8
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count113
+\Gm@cntv=\count114
+\c@Gm@tempcnt=\count115
+\Gm@bindingoffset=\dimen127
+\Gm@wd@mp=\dimen128
+\Gm@odd@mp=\dimen129
+\Gm@even@mp=\dimen130
+\Gm@layoutwidth=\dimen131
+\Gm@layoutheight=\dimen132
+\Gm@layouthoffset=\dimen133
+\Gm@layoutvoffset=\dimen134
+\Gm@dimlist=\toks29
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -766,41 +792,75 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen127
-\Gin@req@width=\dimen128
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
 )
 (./theo_6.aux)
 \openout1 = `theo_6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-\c@lstlisting=\count113
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+\c@lstlisting=\count116
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(85.35826pt, 717.00946pt, 42.67912pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=717.00946pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen129
+\scratchcounter=\count117
+\scratchdimen=\dimen137
 \scratchbox=\box30
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen130
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks30
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen138
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -837,10 +897,6 @@ Package etexcmds Info: Could not find \expanded.
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
@@ -857,56 +913,77 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 29.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 30.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
+Underfull \hbox (badness 10000) in paragraph at lines 34--41
 
  []
 
 <example1.png, id=14, 1104.125pt x 620.3175pt>
 File: example1.png Graphic file (type png)
 <use example1.png>
-Package pdftex.def Info: example1.png  used on input line 45.
-(pdftex.def)             Requested size: 272.99881pt x 153.37524pt.
+Package pdftex.def Info: example1.png  used on input line 46.
+(pdftex.def)             Requested size: 292.77629pt x 164.48747pt.
 [2 <./example1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 50--54
+Overfull \hbox (30.47299pt too wide) in paragraph at lines 51--55
+$[]$ \T2A/cmr/m/n/12 Find the computational complexity of the linear and kernel
+ SVM \T2A/cmr/bx/n/12 classification
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 84--91
+Overfull \hbox (19.80832pt too wide) in paragraph at lines 85--89
+$[]$ \T2A/cmr/m/n/12 Consider SVM regression optimization problem. Write down d
+ual formulation
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--100
-
+Overfull \hbox (34.38329pt too wide) detected at line 114
+\OML/cmm/m/it/12 L \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 C []\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 ^^X[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 ) + 
+[]\OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 w\OMS/cmsy/m/n/12 jj[] ^^@ []\OT1/cmr/m/n
+/12 (\OML/cmm/m/it/12 ^^V[]^^X[] \OT1/cmr/m/n/12 + []\OML/cmm/m/it/12 ^^X[]\OT1
+/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 a[]\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 " \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^X[] \OT1/cmr/m/n/12 + \OML/
+cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 ) \OMS
+/cmsy/m/n/12 ^^@ [] []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 " \OT1/cmr/m/n/12 + \OM
+L/cmm/m/it/12 ^^X[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 +
+ \OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 )
  []
 
 [4] (./theo_6.aux) ) 
 Here is how much of TeX's memory you used:
- 6233 strings out of 492980
- 83406 string characters out of 6132495
- 148319 words of memory out of 5000000
- 9605 multiletter control sequences out of 15000+600000
+ 6712 strings out of 492980
+ 90471 string characters out of 6132495
+ 166059 words of memory out of 5000000
+ 10073 multiletter control sequences out of 15000+600000
  24505 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,32p,273b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,32p,273b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-supe
 r/cm-super-t2a.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
@@ -914,18 +991,21 @@ ts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on theo_6.pdf (4 pages, 502666 bytes).
+mr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on theo_6.pdf (4 pages, 525465 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
